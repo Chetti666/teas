@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: theme('colors.stone');
+  }
+
+  body {
+    font-family: theme('fontFamily.body');
+    color: theme('colors.ink');
+    background-color: theme('colors.surface');
+    -webkit-font-smoothing: antialiased;
+  }
+}

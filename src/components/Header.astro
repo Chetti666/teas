@@ -1,0 +1,59 @@
+---
+const links = [
+  { href: '/', label: 'Inicio' },
+  { href: '/trabajo', label: 'Trabajo' },
+  { href: '/exhibiciones', label: 'Exhibiciones' },
+  { href: '/mural', label: 'Mural' },
+  { href: '/shop', label: 'Shop' },
+  { href: '/contacto', label: 'Contacto' },
+]
+---
+
+<header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-stone">
+  <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="font-display text-xl font-extrabold tracking-widest text-ink uppercase hover:text-accent transition-colors">
+      TEAS
+    </a>
+    <ul class="hidden md:flex items-center gap-8">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm font-medium text-muted hover:text-ink transition-colors tracking-wide uppercase"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button id="menu-toggle" class="md:hidden p-2" aria-label="Menú">
+      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
+      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
+      <span class="block w-6 h-0.5 bg-ink"></span>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone bg-surface px-6 py-4">
+    <ul class="flex flex-col gap-4">
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm font-medium text-muted hover:text-ink transition-colors tracking-wide uppercase"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle')
+  const menu = document.getElementById('mobile-menu')
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden')
+    })
+  }
+</script>

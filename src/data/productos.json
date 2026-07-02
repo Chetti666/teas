@@ -1,0 +1,41 @@
+[
+  {
+    "id": "standy-grey-1",
+    "title": "Standy Grey 1",
+    "image": "/images/greda.jpeg",
+    "alt": "Standy Grey 1",
+    "price": 120000,
+    "currency": "CLP",
+    "edition": "Edición limitada de 60 unidades",
+    "technique": "Giclée sobre papel de algodón",
+    "dimensions": "40 × 30 cm",
+    "stock": 12,
+    "signature": "Firmada y numerada"
+  },
+  {
+    "id": "calipso-print",
+    "title": "Calipso",
+    "image": "/images/calipso.jpeg",
+    "alt": "Calipso",
+    "price": 150000,
+    "currency": "CLP",
+    "edition": "Edición limitada de 40 unidades",
+    "technique": "Giclée sobre papel de algodón",
+    "dimensions": "50 × 40 cm",
+    "stock": 8,
+    "signature": "Firmada y numerada"
+  },
+  {
+    "id": "musgo-print",
+    "title": "Musgo",
+    "image": "/images/musgo.jpeg",
+    "alt": "Musgo",
+    "price": 120000,
+    "currency": "CLP",
+    "edition": "Edición limitada de 60 unidades",
+    "technique": "Giclée sobre papel de algodón",
+    "dimensions": "40 × 30 cm",
+    "stock": 15,
+    "signature": "Firmada y numerada"
+  }
+]

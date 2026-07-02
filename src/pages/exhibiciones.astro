@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import exhibiciones from '../data/exhibiciones.json' with { type: 'json' }
+
+const sorted = [...exhibiciones].sort((a, b) => b.year - a.year)
+const years = [...new Set(sorted.map((e) => e.year))]
+---
+
+<BaseLayout title="Exhibiciones | TEAS" description="Exhibiciones y proyectos curatoriales de TEAS.">
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <h1 class="font-display text-3xl font-bold tracking-widest uppercase text-ink mb-2">Exhibiciones</h1>
+    <p class="text-sm text-muted mb-10">Muestras curatoriales y proyectos</p>
+
+    {years.map((year) => (
+      <div class="mb-12">
+        <h2 class="font-display text-xl font-bold tracking-widest text-ink mb-6 pb-2 border-b border-stone">
+          {year}
+        </h2>
+        <div class="space-y-8">
+          {sorted.filter((e) => e.year === year).map((expo) => (
+            <article class="bg-white p-6 border border-ink/10 shadow-brush">
+              <h3 class="font-display text-lg font-bold uppercase tracking-widest text-ink">{expo.title}</h3>
+              <p class="text-sm text-accent mt-1">{expo.venue}, {expo.city}</p>
+              <p class="text-sm text-muted mt-3 leading-relaxed">{expo.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+</BaseLayout>

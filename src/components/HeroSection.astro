@@ -1,0 +1,26 @@
+---
+export interface Props {
+  image: string
+  alt: string
+  title?: string
+}
+
+const { image, alt, title } = Astro.props
+---
+
+<section class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-white">
+  <div class="absolute inset-0">
+    <img
+      src={image}
+      alt={alt}
+      class="w-full h-full object-contain object-center"
+    />
+  </div>
+  {title && (
+    <div class="relative z-10 text-center px-6">
+      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-[0.2em] text-white mix-blend-difference">
+        {title}
+      </h1>
+    </div>
+  )}
+</section>

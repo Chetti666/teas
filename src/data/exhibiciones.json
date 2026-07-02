@@ -1,0 +1,34 @@
+[
+  {
+    "id": "narrativas-tacitas",
+    "title": "Narrativas Tácitas",
+    "year": 2024,
+    "venue": "Galería de Arte Contemporáneo",
+    "city": "Santiago",
+    "description": "Serie de retratos que exploran el silencio y la comunicación no verbal a través del color y la línea expresiva."
+  },
+  {
+    "id": "jardin-ceniza",
+    "title": "Jardín Ceniza",
+    "year": 2023,
+    "venue": "Centro Cultural",
+    "city": "Valparaíso",
+    "description": "Intervención site-specific que reflexiona sobre la memoria y el paisaje urbano."
+  },
+  {
+    "id": "retratos-liminales",
+    "title": "Retratos Liminales",
+    "year": 2023,
+    "venue": "Espacio Arte Abierto",
+    "city": "Santiago",
+    "description": "Estudio de la figura humana en estados de transición emocional."
+  },
+  {
+    "id": "cromatica",
+    "title": "Cromática",
+    "year": 2022,
+    "venue": "Museo de Artes Visuales",
+    "city": "Santiago",
+    "description": "Exploración del color como narrativa principal en el retrato contemporáneo."
+  }
+]

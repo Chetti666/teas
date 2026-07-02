@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title: string
+  image: string
+  alt: string
+  year?: number
+  technique?: string
+  dimensions?: string
+  signature?: string
+}
+
+const { title, image, alt, year, technique, dimensions, signature = 'TEAS' } = Astro.props
+---
+
+<div class="group bg-white border border-ink/10 shadow-brush transition-all duration-300 hover:-translate-y-0.5">
+  <div class="overflow-hidden">
+    <img
+      src={image}
+      alt={alt}
+      class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="p-5 space-y-1">
+    <h3 class="font-display text-lg font-bold uppercase tracking-widest text-ink">{title}</h3>
+    {year && <p class="text-sm text-muted">{year}</p>}
+    {technique && <p class="text-sm text-muted/70">{technique}</p>}
+    {dimensions && <p class="text-xs text-muted/50">{dimensions}</p>}
+    <p class="pt-3 text-right font-display text-sm tracking-widest text-accent">{signature}</p>
+  </div>
+</div>
