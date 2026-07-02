@@ -1,4 +1,10 @@
 ---
+export interface Props {
+  currentPath?: string
+}
+
+const { currentPath = '' } = Astro.props
+
 const links = [
   { href: '/', label: 'Inicio' },
   { href: '/trabajo', label: 'Trabajo' },
@@ -11,34 +17,42 @@ const links = [
 
 <header class="sticky top-0 z-50 bg-surface/80 backdrop-blur-md border-b border-stone">
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="font-display text-xl font-extrabold tracking-widest text-ink uppercase hover:text-accent transition-colors">
+    <a href="/" class="font-display text-lg font-bold tracking-[0.2em] text-ink uppercase hover:text-accent transition-colors duration-300">
       TEAS
     </a>
     <ul class="hidden md:flex items-center gap-8">
-      {links.map((link) => (
-        <li>
-          <a
-            href={link.href}
-            class="text-sm font-medium text-muted hover:text-ink transition-colors tracking-wide uppercase"
-          >
-            {link.label}
-          </a>
-        </li>
-      ))}
+      {links.map((link) => {
+        const isActive = link.href !== '/' && currentPath.startsWith(link.href)
+        return (
+          <li>
+            <a
+              href={link.href}
+              class={`relative text-xs font-medium uppercase tracking-[0.15em] transition-colors duration-300 ${
+                isActive ? 'text-ink' : 'text-muted hover:text-ink'
+              }`}
+            >
+              {link.label}
+              {isActive && (
+                <span class="absolute -bottom-1 left-0 right-0 h-px bg-ink/60" />
+              )}
+            </a>
+          </li>
+        )
+      })}
     </ul>
     <button id="menu-toggle" class="md:hidden p-2" aria-label="Menú">
-      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
-      <span class="block w-6 h-0.5 bg-ink mb-1.5"></span>
-      <span class="block w-6 h-0.5 bg-ink"></span>
+      <span class="block w-5 h-px bg-ink mb-1.5 transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-ink mb-1.5 transition-all duration-300"></span>
+      <span class="block w-5 h-px bg-ink transition-all duration-300"></span>
     </button>
   </nav>
-  <div id="mobile-menu" class="hidden md:hidden border-t border-stone bg-surface px-6 py-4">
-    <ul class="flex flex-col gap-4">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-stone bg-surface/95 backdrop-blur-md px-6 py-6">
+    <ul class="flex flex-col gap-5">
       {links.map((link) => (
         <li>
           <a
             href={link.href}
-            class="text-sm font-medium text-muted hover:text-ink transition-colors tracking-wide uppercase"
+            class="text-sm font-medium text-muted hover:text-ink transition-colors tracking-[0.15em] uppercase"
           >
             {link.label}
           </a>

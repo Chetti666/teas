@@ -11,12 +11,32 @@ export default {
         accent: '#8B7E74',
       },
       fontFamily: {
-        display: ['"Inter"', 'system-ui', 'sans-serif'],
-        body: ['"Inter"', 'system-ui', 'sans-serif'],
+        display: ['"Syne"', 'sans-serif'],
+        body: ['"DM Sans"', 'sans-serif'],
       },
       boxShadow: {
         brush: '4px 4px 0px 0px #1A1A1A',
         'brush-lg': '6px 6px 0px 0px #1A1A1A',
+        frame: 'inset 0 0 0 1px rgba(26,26,26,0.06)',
+      },
+      keyframes: {
+        reveal: {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'reveal-slow': {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        fade: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        reveal: 'reveal 0.7s ease-out forwards',
+        'reveal-slow': 'reveal-slow 0.9s ease-out forwards',
+        fade: 'fade 0.6s ease-out forwards',
       },
     },
   },

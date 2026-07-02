@@ -7,21 +7,24 @@ const years = [...new Set(sorted.map((e) => e.year))]
 ---
 
 <BaseLayout title="Exhibiciones | TEAS" description="Exhibiciones y proyectos curatoriales de TEAS.">
-  <section class="max-w-4xl mx-auto px-6 py-20">
-    <h1 class="font-display text-3xl font-bold tracking-widest uppercase text-ink mb-2">Exhibiciones</h1>
-    <p class="text-sm text-muted mb-10">Muestras curatoriales y proyectos</p>
+  <section class="max-w-4xl mx-auto px-6 py-24 animate-reveal">
+    <div class="max-w-xl">
+      <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Exhibiciones</h1>
+      <p class="text-sm text-muted/70">Muestras curatoriales y proyectos</p>
+    </div>
+    <div class="h-px w-16 bg-stone my-8" />
 
-    {years.map((year) => (
-      <div class="mb-12">
-        <h2 class="font-display text-xl font-bold tracking-widest text-ink mb-6 pb-2 border-b border-stone">
+    {years.map((year, yi) => (
+      <div class="mb-16 last:mb-0" style={`animation: reveal 0.7s ease-out ${yi * 150}ms forwards; opacity: 0;`}>
+        <h2 class="font-display text-lg font-bold tracking-[0.2em] text-ink mb-8 pb-3 border-b border-stone/60">
           {year}
         </h2>
-        <div class="space-y-8">
-          {sorted.filter((e) => e.year === year).map((expo) => (
-            <article class="bg-white p-6 border border-ink/10 shadow-brush">
-              <h3 class="font-display text-lg font-bold uppercase tracking-widest text-ink">{expo.title}</h3>
-              <p class="text-sm text-accent mt-1">{expo.venue}, {expo.city}</p>
-              <p class="text-sm text-muted mt-3 leading-relaxed">{expo.description}</p>
+        <div class="space-y-6">
+          {sorted.filter((e) => e.year === year).map((expo, ei) => (
+            <article class="bg-white p-6 border border-ink/10 shadow-brush transition-all duration-300 hover:shadow-brush-lg">
+              <h3 class="font-display text-base font-bold uppercase tracking-[0.12em] text-ink">{expo.title}</h3>
+              <p class="text-xs font-medium text-accent mt-1.5 tracking-wide">{expo.venue}, {expo.city}</p>
+              <p class="text-sm text-muted/70 mt-3 leading-relaxed">{expo.description}</p>
             </article>
           ))}
         </div>

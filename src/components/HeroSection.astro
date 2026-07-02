@@ -8,7 +8,7 @@ export interface Props {
 const { image, alt, title } = Astro.props
 ---
 
-<section class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden bg-white">
+<section class="relative w-full min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden bg-white">
   <div class="absolute inset-0">
     <img
       src={image}
@@ -18,7 +18,7 @@ const { image, alt, title } = Astro.props
   </div>
   {title && (
     <div class="relative z-10 text-center px-6">
-      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-[0.2em] text-white mix-blend-difference">
+      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-[0.15em] text-white mix-blend-difference leading-none">
         {title}
       </h1>
     </div>

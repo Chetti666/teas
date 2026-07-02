@@ -5,19 +5,25 @@ import obras from '../data/obras.json' with { type: 'json' }
 ---
 
 <BaseLayout title="Trabajo | TEAS" description="Galería completa de obras de TEAS.">
-  <section class="max-w-6xl mx-auto px-6 py-20">
-    <h1 class="font-display text-3xl font-bold tracking-widest uppercase text-ink mb-2">Trabajo</h1>
-    <p class="text-sm text-muted mb-10">Galería completa de obra individual</p>
+  <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
+    <div class="max-w-xl">
+      <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Trabajo</h1>
+      <p class="text-sm text-muted/70">Galería completa de obra individual</p>
+    </div>
+    <div class="h-px w-16 bg-stone my-8" />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {obras.map((obra) => (
-        <ArtCard
-          title={obra.title}
-          image={obra.image}
-          alt={obra.alt}
-          year={obra.year}
-          technique={obra.technique}
-          dimensions={obra.dimensions}
-        />
+      {obras.map((obra, i) => (
+        <div style={`animation: reveal 0.7s ease-out ${i * 100}ms forwards; opacity: 0;`}>
+          <ArtCard
+            title={obra.title}
+            image={obra.image}
+            alt={obra.alt}
+            year={obra.year}
+            technique={obra.technique}
+            dimensions={obra.dimensions}
+            index={i}
+          />
+        </div>
       ))}
     </div>
   </section>

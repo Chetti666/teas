@@ -9,10 +9,26 @@
     border-color: theme('colors.stone');
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: theme('fontFamily.body');
     color: theme('colors.ink');
     background-color: theme('colors.surface');
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: theme('colors.ink');
+    color: theme('colors.surface');
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
   }
 }
