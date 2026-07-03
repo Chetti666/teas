@@ -34,7 +34,7 @@ Images in `public/images/` use **`.jpeg`** extension, referenced as `/images/...
 Defined in `tailwind.config.mjs`:
 - Colors: `surface` (#F5F0EB), `ink` (#1A1A1A), `muted` (#6B6258), `stone` (#D4CEC6), `accent` (#8B7E74)
 - Fonts: `font-display` (Syne), `font-body` (DM Sans)
-- Shadows: `shadow-brush`, `shadow-brush-lg`, `shadow-frame`
+- Shadows: `shadow-brush`, `shadow-brush-lg`, `shadow-subtle`, `shadow-subtle-lg`, `shadow-frame`
 - Animations: `animate-reveal`, `animate-reveal-slow`, `animate-fade`
 
 ## Pages
