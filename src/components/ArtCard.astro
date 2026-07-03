@@ -14,14 +14,14 @@ const { title, image, alt, year, technique, dimensions, signature = 'TEAS', inde
 ---
 
 <div
-  class="group relative bg-white shadow-brush transition-all duration-500 hover:-translate-y-1 hover:shadow-brush-lg"
+  class="relative bg-white shadow-subtle shadow-brush transition-all duration-500 hover:-translate-y-1 hover:shadow-subtle-lg"
   style={`animation-delay: ${index * 120}ms`}
 >
     <div class="overflow-hidden bg-surface">
     <img
       src={image}
       alt={alt}
-      class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+      class="w-full h-auto object-cover"
       loading="lazy"
       decoding="async"
     />

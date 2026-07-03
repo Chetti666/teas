@@ -17,6 +17,8 @@ export default {
       boxShadow: {
         brush: '4px 4px 0px 0px #1A1A1A',
         'brush-lg': '6px 6px 0px 0px #1A1A1A',
+        subtle: '0 4px 24px rgba(26,26,26,0.08), 0 2px 8px rgba(26,26,26,0.06)',
+        'subtle-lg': '0 8px 40px rgba(26,26,26,0.10), 0 4px 16px rgba(26,26,26,0.08)',
         frame: 'inset 0 0 0 1px rgba(26,26,26,0.06)',
       },
       keyframes: {
