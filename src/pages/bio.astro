@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="Bio | TEAS — Arte Contemporáneo"
+  description="Conoce la trayectoria de Seba TEAS, artista contemporáneo chileno. Pintura acrílica, murales, retratos y arte urbano."
+  canonical="/bio"
+>
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="max-w-xl mb-12">
+      <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Bio</h1>
+      <p class="text-sm text-muted/70">Trayectoria y visión artística</p>
+    </div>
+    <div class="h-px w-16 bg-stone mb-12" />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-5 text-muted leading-relaxed text-sm">
+        <p>
+          Seba TEAS es un artista contemporáneo chileno radicado en Santiago. Su obra explora
+          el retrato expresivo, la abstracción cromática y la intervención urbana a gran escala
+          mediante murales y graffiti.
+        </p>
+        <p>
+          Desde sus inicios en el arte callejero, TEAS ha desarrollado un lenguaje visual propio
+          que combina la espontaneidad del gesto pictórico con una sensibilidad contemporánea.
+          Su trabajo transita entre el estudio y el espacio público, entre el lienzo y el muro.
+        </p>
+        <p>
+          Ha participado en exhibiciones colectivas e individuales en Santiago, y sus murales
+          forman parte del paisaje urbano de diversas comunas de la capital chilena.
+        </p>
+      </div>
+
+      <div class="aspect-[4/5] bg-stone/20 rounded-sm overflow-hidden">
+        <img
+          src="/images/calipso.jpeg"
+          alt="Obra de TEAS — retrato contemporáneo en acrílico"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
