@@ -1,9 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import productos from '../data/productos.json' with { type: 'json' }
+
+const productListLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Ediciones limitadas TEAS",
+  "description": "Prints de arte contemporáneo de TEAS, ediciones limitadas firmadas y numeradas.",
+  "url": "https://teas.cl/shop",
+  "numberOfItems": productos.length,
+  "itemListElement": productos.map((p, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Product",
+      "name": `${p.title} — Print de TEAS`,
+      "image": `https://teas.cl${p.image}`,
+      "description": `Print edición limitada de "${p.title}" de TEAS. ${p.technique}. ${p.dimensions}. ${p.signature}.`,
+      "brand": { "@type": "Brand", "name": "TEAS" },
+      "offers": {
+        "@type": "Offer",
+        "price": p.price,
+        "priceCurrency": "CLP",
+        "availability": p.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+        "url": "https://teas.cl/shop"
+      }
+    }
+  }))
+}
 ---
 
-<BaseLayout title="Shop | TEAS" description="Tienda de ediciones limitadas de TEAS.">
+<BaseLayout
+  title="Tienda de Arte | TEAS — Cuadros, Prints y Ediciones Limitadas"
+  description="Compra obras originales y ediciones limitadas de TEAS. Cuadros, prints de arte contemporáneo, giclée sobre papel de algodón. Envíos a todo Chile."
+  ogType="website"
+  canonical="/shop"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(productListLd)}>
   <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
     <div class="max-w-xl">
       <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Shop</h1>

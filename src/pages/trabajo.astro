@@ -2,9 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import ArtCard from '../components/ArtCard.astro'
 import obras from '../data/obras.json' with { type: 'json' }
+
+const artworkListLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Pinturas y cuadros de TEAS",
+  "description": "Galería completa de obras de TEAS: retratos contemporáneos en acrílico sobre lienzo.",
+  "url": "https://teas.cl/trabajo",
+  "numberOfItems": obras.length,
+  "itemListElement": obras.map((o, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "VisualArtwork",
+      "name": o.title,
+      "description": `"${o.title}" — ${o.technique}, ${o.dimensions}. Obra de TEAS, arte contemporáneo.`,
+      "artist": { "@type": "Person", "name": "Seba TEAS", "url": "https://teas.cl" },
+      "artMedium": o.technique,
+      "artform": "Pintura",
+      "image": `https://teas.cl${o.image}`,
+      "dateCreated": o.year.toString()
+    }
+  }))
+}
 ---
 
-<BaseLayout title="Trabajo | TEAS" description="Galería completa de obras de TEAS.">
+<BaseLayout
+  title="Cuadros y Pinturas | TEAS — Galería de Arte Contemporáneo en Acrílico"
+  description="Galería completa de cuadros y pinturas contemporáneas de TEAS. Obras originales en acrílico sobre lienzo, retratos expresivos y técnica mixta. Arte contemporáneo chileno."
+  ogType="article"
+  canonical="/trabajo"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(artworkListLd)} />
   <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
     <div class="max-w-xl">
       <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Trabajo</h1>

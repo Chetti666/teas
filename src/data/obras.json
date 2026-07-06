@@ -3,7 +3,7 @@
     "id": "calipso",
     "title": "Calipso",
     "image": "/images/calipso.jpeg",
-    "alt": "Retrato Calipso",
+    "alt": "Calipso — retrato contemporáneo en acrílico sobre lienzo de TEAS, 120 × 90 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "120 × 90 cm"
@@ -12,7 +12,7 @@
     "id": "ocre",
     "title": "Ocre",
     "image": "/images/ocre.jpeg",
-    "alt": "Retrato Ocre",
+    "alt": "Ocre — retrato expresivo en acrílico sobre lienzo de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -21,7 +21,7 @@
     "id": "cafe",
     "title": "Café",
     "image": "/images/cafe.jpeg",
-    "alt": "Retrato Café",
+    "alt": "Café — pintura contemporánea en acrílico de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -30,7 +30,7 @@
     "id": "verde",
     "title": "Verde",
     "image": "/images/verde.jpeg",
-    "alt": "Retrato Verde",
+    "alt": "Verde — retrato en acrílico sobre lienzo de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -39,7 +39,7 @@
     "id": "musgo",
     "title": "Musgo",
     "image": "/images/musgo.jpeg",
-    "alt": "Retrato Musgo",
+    "alt": "Musgo — retrato contemporáneo en acrílico de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -48,7 +48,7 @@
     "id": "musgo2",
     "title": "Musgo II",
     "image": "/images/musgo2.jpeg",
-    "alt": "Retrato Musgo II",
+    "alt": "Musgo II — pintura acrílica contemporánea de TEAS, 80 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "80 × 80 cm"
@@ -57,7 +57,7 @@
     "id": "claro",
     "title": "Claro",
     "image": "/images/claro.jpeg",
-    "alt": "Retrato Claro",
+    "alt": "Claro — retrato en acrílico sobre lienzo de TEAS, 90 × 70 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "90 × 70 cm"
@@ -66,7 +66,7 @@
     "id": "greda",
     "title": "Greda",
     "image": "/images/greda.jpeg",
-    "alt": "Retrato Greda",
+    "alt": "Greda — retrato contemporáneo en acrílico de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -75,7 +75,7 @@
     "id": "rojo",
     "title": "Rojo",
     "image": "/images/rojo.jpeg",
-    "alt": "Retrato Rojo",
+    "alt": "Rojo — retrato expresivo en acrílico sobre lienzo de TEAS, 100 × 80 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "100 × 80 cm"
@@ -84,7 +84,7 @@
     "id": "3cuadros",
     "title": "Tres Cuadros",
     "image": "/images/3cuadros.jpeg",
-    "alt": "Serie Tres Cuadros",
+    "alt": "Tres Cuadros — tríptico contemporáneo en acrílico de TEAS, 60 × 180 cm",
     "year": 2026,
     "technique": "Acrílico sobre lienzo",
     "dimensions": "60 × 180 cm (tríptico)"

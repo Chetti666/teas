@@ -42,7 +42,12 @@ const murales = [
 ]
 ---
 
-<BaseLayout title="Murales | TEAS" description="Intervenciones urbanas y murales de TEAS.">
+<BaseLayout
+  title="Murales y Graffiti | TEAS — Intervenciones Urbanas de Arte Contemporáneo"
+  description="Murales, graffiti e intervenciones urbanas de TEAS. Arte contemporáneo en espacios públicos de Santiago. Proyectos de gran escala y arte callejero."
+  ogType="article"
+  canonical="/mural"
+>
   <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
     <div class="max-w-xl">
       <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Murales</h1>
@@ -61,7 +66,7 @@ const murales = [
           <div class="-mx-6 md:-mx-12 overflow-hidden bg-surface">
             <img
               src={mural.principal}
-              alt={mural.title}
+              alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
               class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               loading={i === 0 ? 'eager' : 'lazy'}
             />
@@ -116,7 +121,7 @@ const murales = [
       const gallery = document.getElementById('modal-gallery')
       gallery.innerHTML = data.images.map(src =>
         `<div class="overflow-hidden bg-white/5 rounded-sm">
-          <img src="${src}" alt="Proceso ${data.title}" class="w-full h-auto object-cover" loading="lazy" />
+          <img src="${src}" alt="Proceso creativo del mural ${data.title} de TEAS" class="w-full h-auto object-cover" loading="lazy" />
         </div>`
       ).join('')
       document.getElementById('mural-modal').classList.remove('hidden')
