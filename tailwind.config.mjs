@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        surface: '#F5F0EB',
+        surface: '#FFFFFF',
         ink: '#000000',
         muted: '#6B6258',
         stone: '#D4CEC6',
         accent: '#8B7E74',
       },
       fontFamily: {
-        display: ['"Inter"', 'sans-serif'],
-        body: ['"Inter"', 'sans-serif'],
+        display: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        body: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       boxShadow: {
         brush: '4px 4px 0px 0px #1A1A1A',
