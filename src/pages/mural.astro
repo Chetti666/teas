@@ -3,23 +3,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const murales = [
   {
-    id: "muro1",
-    title: "Muro 1",
-    location: "Santiago, 2026",
-    principal: "/images/murales/muro1_principal.jpeg",
+    id: "muro3",
+    title: "Memorias de Mar",
+    location: "Av Irarrázabal, Santiago Chile, 2026",
+    principal: "/images/murales/muro3_principal.jpg",
     proceso: [
-      "/images/murales/boceto.jpg",
-      "/images/murales/muro1_a.jpg",
-      "/images/murales/muro1_b.jpg",
-      "/images/murales/muro1_c.jpg",
-      "/images/murales/muro1_d.jpg",
-      "/images/murales/muro1_f.jpeg",
+      "/images/murales/muro3_a.jpg",
+      "/images/murales/muro3_b.jpg",
+      "/images/murales/muro3_principal.jpg",
     ],
   },
   {
     id: "muro2",
-    title: "Muro 2",
-    location: "Santiago, 2026",
+    title: "Mujer del Campo",
+    location: "Isla del Guindo, 2026",
     principal: "/images/murales/muro2_principal.jpg",
     proceso: [
       "/images/murales/muro2_a.jpg",
@@ -29,14 +26,17 @@ const murales = [
     ],
   },
   {
-    id: "muro3",
-    title: "Muro 3",
-    location: "Santiago, 2026",
-    principal: "/images/murales/muro3_principal.jpg",
+    id: "muro1",
+    title: "Ejercicios de expresión",
+    location: "Batuco, comuna de Lampa, 2026",
+    principal: "/images/murales/muro1_principal.jpeg",
     proceso: [
-      "/images/murales/muro3_a.jpg",
-      "/images/murales/muro3_b.jpg",
-      "/images/murales/muro3_principal.jpg",
+      "/images/murales/boceto.jpg",
+      "/images/murales/muro1_a.jpg",
+      "/images/murales/muro1_b.jpg",
+      "/images/murales/muro1_c.jpg",
+      "/images/murales/muro1_d.jpg",
+      "/images/murales/muro1_f.jpeg",
     ],
   },
 ];
@@ -59,9 +59,7 @@ const murales = [
         Intervenciones urbanas y colaboraciones de gran escala
       </p>
     </div>
-    <div class="h-px w-16 bg-stone my-8"></div>
-
-    <div class="space-y-24">
+    <div class="mt-8 space-y-16">
       {
         murales.map((mural, i) => (
           <article
@@ -69,25 +67,21 @@ const murales = [
             style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
             data-mural={mural.id}
           >
-            <div class="-mx-6 md:-mx-12 overflow-hidden bg-surface">
+            <div class="flex justify-center bg-surface">
               <img
                 src={mural.principal}
                 alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
-                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                class="w-full max-w-4xl lg:max-w-6xl h-auto max-h-[55vh] lg:max-h-[65vh] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                 loading={i === 0 ? "eager" : "lazy"}
               />
             </div>
-            <div class="mt-6 flex items-end justify-between border-b border-stone/40 pb-4">
-              <div>
-                <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">
-                  {mural.title}
-                </h3>
-                <p class="text-sm text-muted/70 mt-1">{mural.location}</p>
-              </div>
-              <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
-                Ver proceso →
-              </span>
+            <div class="mt-5 flex items-center justify-center gap-6">
+              <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">
+                {mural.title}
+              </h3>
+              <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] group-hover:text-accent transition-colors duration-300">Ver más →</span>
             </div>
+            <p class="text-sm text-muted/70 text-center mt-1">{mural.location}</p>
           </article>
         ))
       }
