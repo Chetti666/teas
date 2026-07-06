@@ -1,45 +1,45 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const murales = [
   {
-    id: 'muro1',
-    title: 'Muro 1',
-    location: 'Santiago, 2026',
-    principal: '/images/murales/muro1_principal.jpg',
+    id: "muro1",
+    title: "Muro 1",
+    location: "Santiago, 2026",
+    principal: "/images/murales/muro1_principal.jpeg",
     proceso: [
-      '/images/murales/boceto.jpg',
-      '/images/murales/muro1_a.jpg',
-      '/images/murales/muro1_b.jpg',
-      '/images/murales/muro1_c.jpg',
-      '/images/murales/muro1_d.jpg',
-      '/images/murales/muro1_f.jpeg',
+      "/images/murales/boceto.jpg",
+      "/images/murales/muro1_a.jpg",
+      "/images/murales/muro1_b.jpg",
+      "/images/murales/muro1_c.jpg",
+      "/images/murales/muro1_d.jpg",
+      "/images/murales/muro1_f.jpeg",
     ],
   },
   {
-    id: 'muro2',
-    title: 'Muro 2',
-    location: 'Santiago, 2026',
-    principal: '/images/murales/muro2_principal.jpg',
+    id: "muro2",
+    title: "Muro 2",
+    location: "Santiago, 2026",
+    principal: "/images/murales/muro2_principal.jpg",
     proceso: [
-      '/images/murales/muro2_a.jpg',
-      '/images/murales/muro2a.jpg',
-      '/images/murales/muro2b.jpg',
-      '/images/murales/muro2c.jpg',
+      "/images/murales/muro2_a.jpg",
+      "/images/murales/muro2a.jpg",
+      "/images/murales/muro2b.jpg",
+      "/images/murales/muro2c.jpg",
     ],
   },
   {
-    id: 'muro3',
-    title: 'Muro 3',
-    location: 'Santiago, 2026',
-    principal: '/images/murales/muro3_principal.jpg',
+    id: "muro3",
+    title: "Muro 3",
+    location: "Santiago, 2026",
+    principal: "/images/murales/muro3_principal.jpg",
     proceso: [
-      '/images/murales/muro3_a.jpg',
-      '/images/murales/muro3_b.jpg',
-      '/images/murales/muro3_principal.jpg',
+      "/images/murales/muro3_a.jpg",
+      "/images/murales/muro3_b.jpg",
+      "/images/murales/muro3_principal.jpg",
     ],
   },
-]
+];
 ---
 
 <BaseLayout
@@ -50,46 +50,74 @@ const murales = [
 >
   <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
     <div class="max-w-xl">
-      <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Murales</h1>
-      <p class="text-sm text-muted/70">Intervenciones urbanas y colaboraciones de gran escala</p>
+      <h1
+        class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2"
+      >
+        Murales
+      </h1>
+      <p class="text-sm text-muted/70">
+        Intervenciones urbanas y colaboraciones de gran escala
+      </p>
     </div>
-    <div class="h-px w-16 bg-stone my-8" />
+    <div class="h-px w-16 bg-stone my-8"></div>
 
     <div class="space-y-24">
-      {murales.map((mural, i) => (
-        <article
-          class="group cursor-pointer w-full"
-          style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
-          data-mural={mural.id}
-
-        >
-          <div class="-mx-6 md:-mx-12 overflow-hidden bg-surface">
-            <img
-              src={mural.principal}
-              alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
-              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-              loading={i === 0 ? 'eager' : 'lazy'}
-            />
-          </div>
-          <div class="mt-6 flex items-end justify-between border-b border-stone/40 pb-4">
-            <div>
-              <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">{mural.title}</h3>
-              <p class="text-sm text-muted/70 mt-1">{mural.location}</p>
+      {
+        murales.map((mural, i) => (
+          <article
+            class="group cursor-pointer w-full"
+            style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
+            data-mural={mural.id}
+          >
+            <div class="-mx-6 md:-mx-12 overflow-hidden bg-surface">
+              <img
+                src={mural.principal}
+                alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
+                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                loading={i === 0 ? "eager" : "lazy"}
+              />
             </div>
-            <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] group-hover:text-accent transition-colors duration-300 whitespace-nowrap">Ver proceso →</span>
-          </div>
-        </article>
-      ))}
+            <div class="mt-6 flex items-end justify-between border-b border-stone/40 pb-4">
+              <div>
+                <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">
+                  {mural.title}
+                </h3>
+                <p class="text-sm text-muted/70 mt-1">{mural.location}</p>
+              </div>
+              <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] group-hover:text-accent transition-colors duration-300 whitespace-nowrap">
+                Ver proceso →
+              </span>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </section>
 
   <div id="mural-modal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="modal-backdrop"></div>
-    <div class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-12">
-      <button id="modal-close" class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl leading-none transition-colors">&times;</button>
+    <div
+      class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+      id="modal-backdrop"
+    >
+    </div>
+    <div
+      class="relative z-10 h-full flex flex-col items-center justify-center px-4 py-12"
+    >
+      <button
+        id="modal-close"
+        class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl leading-none transition-colors"
+        >&times;</button
+      >
       <div class="max-w-5xl w-full">
-        <h3 id="modal-title" class="font-display text-lg font-bold uppercase tracking-[0.12em] text-white mb-6"></h3>
-        <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto">
+        <h3
+          id="modal-title"
+          class="font-display text-lg font-bold uppercase tracking-[0.12em] text-white mb-6"
+        >
+        </h3>
+        <div
+          id="modal-gallery"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto"
+        >
         </div>
       </div>
     </div>
@@ -99,44 +127,66 @@ const murales = [
 <script is:inline>
   const muralesData = {
     muro1: {
-      title: 'Muro 1',
-      images: ['/images/murales/boceto.jpg', '/images/murales/muro1_a.jpg', '/images/murales/muro1_b.jpg', '/images/murales/muro1_c.jpg', '/images/murales/muro1_d.jpg', '/images/murales/muro1_f.jpeg'],
+      title: "Muro 1",
+      images: [
+        "/images/murales/boceto.jpg",
+        "/images/murales/muro1_a.jpg",
+        "/images/murales/muro1_b.jpg",
+        "/images/murales/muro1_c.jpg",
+        "/images/murales/muro1_d.jpg",
+        "/images/murales/muro1_f.jpeg",
+      ],
     },
     muro2: {
-      title: 'Muro 2',
-      images: ['/images/murales/muro2_a.jpg', '/images/murales/muro2a.jpg', '/images/murales/muro2b.jpg', '/images/murales/muro2c.jpg'],
+      title: "Muro 2",
+      images: [
+        "/images/murales/muro2_a.jpg",
+        "/images/murales/muro2a.jpg",
+        "/images/murales/muro2b.jpg",
+        "/images/murales/muro2c.jpg",
+      ],
     },
     muro3: {
-      title: 'Muro 3',
-      images: ['/images/murales/muro3_a.jpg', '/images/murales/muro3_b.jpg', '/images/murales/muro3_principal.jpg'],
+      title: "Muro 3",
+      images: [
+        "/images/murales/muro3_a.jpg",
+        "/images/murales/muro3_b.jpg",
+        "/images/murales/muro3_principal.jpg",
+      ],
     },
-  }
+  };
 
-  document.querySelectorAll('[data-mural]').forEach(el => {
-    el.addEventListener('click', () => {
-      const id = el.dataset.mural
-      const data = muralesData[id]
-      if (!data) return
-      document.getElementById('modal-title').textContent = data.title + ' — Proceso'
-      const gallery = document.getElementById('modal-gallery')
-      gallery.innerHTML = data.images.map(src =>
-        `<div class="overflow-hidden bg-white/5 rounded-sm">
+  document.querySelectorAll("[data-mural]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const id = el.dataset.mural;
+      const data = muralesData[id];
+      if (!data) return;
+      document.getElementById("modal-title").textContent =
+        data.title + " — Proceso";
+      const gallery = document.getElementById("modal-gallery");
+      gallery.innerHTML = data.images
+        .map(
+          (src) =>
+            `<div class="overflow-hidden bg-white/5 rounded-sm">
           <img src="${src}" alt="Proceso creativo del mural ${data.title} de TEAS" class="w-full h-auto object-cover" loading="lazy" />
-        </div>`
-      ).join('')
-      document.getElementById('mural-modal').classList.remove('hidden')
-      document.body.style.overflow = 'hidden'
-    })
-  })
+        </div>`,
+        )
+        .join("");
+      document.getElementById("mural-modal").classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    });
+  });
 
   function closeMural() {
-    document.getElementById('mural-modal').classList.add('hidden')
-    document.body.style.overflow = ''
+    document.getElementById("mural-modal").classList.add("hidden");
+    document.body.style.overflow = "";
   }
 
-  document.getElementById('modal-backdrop').addEventListener('click', closeMural)
-  document.getElementById('modal-close').addEventListener('click', closeMural)
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMural()
-  })
+  document
+    .getElementById("modal-backdrop")
+    .addEventListener("click", closeMural);
+  document.getElementById("modal-close").addEventListener("click", closeMural);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMural();
+  });
 </script>
