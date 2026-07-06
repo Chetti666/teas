@@ -5,14 +5,14 @@ export default {
     extend: {
       colors: {
         surface: '#F5F0EB',
-        ink: '#1A1A1A',
+        ink: '#000000',
         muted: '#6B6258',
         stone: '#D4CEC6',
         accent: '#8B7E74',
       },
       fontFamily: {
-        display: ['"Syne"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        display: ['"Inter"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
       },
       boxShadow: {
         brush: '4px 4px 0px 0px #1A1A1A',

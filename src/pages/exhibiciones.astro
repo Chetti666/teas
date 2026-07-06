@@ -21,7 +21,7 @@ const years = [...new Set(sorted.map((e) => e.year))]
         </h2>
         <div class="space-y-6">
           {sorted.filter((e) => e.year === year).map((expo, ei) => (
-            <article class="bg-white p-6 shadow-subtle shadow-brush transition-all duration-300 hover:shadow-subtle-lg">
+            <article class="bg-white p-6 border border-stone/40 transition-all duration-300">
               <h3 class="font-display text-base font-bold uppercase tracking-[0.12em] text-ink">{expo.title}</h3>
               <p class="text-xs font-medium text-accent mt-1.5 tracking-wide">{expo.venue}, {expo.city}</p>
               <p class="text-sm text-muted/70 mt-3 leading-relaxed">{expo.description}</p>

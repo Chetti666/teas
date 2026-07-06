@@ -14,7 +14,7 @@ import productos from '../data/productos.json' with { type: 'json' }
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {productos.map((producto, i) => (
         <article
-          class="bg-white shadow-subtle shadow-brush transition-all duration-500 hover:shadow-subtle-lg hover:-translate-y-1"
+          class="bg-white border border-stone/40 transition-all duration-500 hover:-translate-y-1"
           style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
         >
           <div class="overflow-hidden bg-surface">
