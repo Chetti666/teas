@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 import HeroSection from '../components/HeroSection.astro'
 import ArtCard from '../components/ArtCard.astro'
 import obras from '../data/obras.json' with { type: 'json' }
+
+const randomObras = [...obras].sort(() => Math.random() - 0.5).slice(0, 3)
 ---
 
 <BaseLayout
@@ -24,7 +26,7 @@ import obras from '../data/obras.json' with { type: 'json' }
     </div>
     <div class="h-px w-16 bg-stone my-8" />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {obras.slice(0, 3).map((obra, i) => (
+      {randomObras.map((obra, i) => (
         <div style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}>
           <ArtCard
             title={obra.title}
