@@ -17,14 +17,7 @@ const productListLd = {
       "name": `${p.title} — Print de TEAS`,
       "image": `https://teas.cl${p.image}`,
       "description": `Print edición limitada de "${p.title}" de TEAS. ${p.technique}. ${p.dimensions}. ${p.signature}.`,
-      "brand": { "@type": "Brand", "name": "TEAS" },
-      "offers": {
-        "@type": "Offer",
-        "price": p.price,
-        "priceCurrency": "CLP",
-        "availability": p.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-        "url": "https://teas.cl/shop"
-      }
+      "brand": { "@type": "Brand", "name": "TEAS" }
     }
   }))
 }
@@ -64,22 +57,7 @@ const productListLd = {
             <p class="text-xs text-muted/50">{producto.technique}</p>
             <p class="text-[11px] text-muted/40">{producto.dimensions}</p>
             <p class="text-[11px] text-muted/40">{producto.signature}</p>
-            <div class="pt-4 flex items-center justify-between border-t border-stone/60">
-              <span class="font-display text-base font-bold text-ink">
-                ${producto.price.toLocaleString('es-CL')} CLP
-              </span>
-              <button
-                class="px-4 py-2 text-[11px] font-bold text-white bg-ink hover:bg-accent transition-all duration-300 uppercase tracking-[0.12em]"
-                onclick="alert('Agregado al carrito: {producto.title}')"
-              >
-                Agregar
-              </button>
-            </div>
-            {producto.stock <= 5 && (
-              <p class="text-[11px] text-accent font-medium tracking-wide">
-                Quedan {producto.stock} unidades
-              </p>
-            )}
+            <p class="pt-3 text-[11px] text-muted/40 uppercase tracking-wider">Próximamente disponible</p>
           </div>
         </article>
       ))}
