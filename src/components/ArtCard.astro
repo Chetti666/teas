@@ -6,15 +6,14 @@ export interface Props {
   year?: number
   technique?: string
   dimensions?: string
-  signature?: string
   index?: number
 }
 
-const { title, image, alt, year, technique, dimensions, signature = 'TEAS', index = 0 } = Astro.props
+const { title, image, alt, year, technique, dimensions, index = 0 } = Astro.props
 ---
 
 <div
-  class="relative bg-white border border-stone/40 transition-all duration-500 hover:-translate-y-1"
+  class="relative bg-white transition-all duration-500 hover:-translate-y-1"
   style={`animation-delay: ${index * 120}ms`}
 >
     <div class="overflow-hidden bg-surface">
@@ -26,11 +25,10 @@ const { title, image, alt, year, technique, dimensions, signature = 'TEAS', inde
       decoding="async"
     />
   </div>
-  <div class="p-5 space-y-1.5">
-    <h3 class="font-display text-base font-semibold uppercase tracking-[0.12em] text-ink">{title}</h3>
+  <div class="py-2.5 space-y-0.5">
+    <h3 class="font-display text-sm font-semibold uppercase tracking-[0.12em] text-ink">{title}</h3>
     {year && <p class="text-xs font-medium text-muted">{year}</p>}
     {technique && <p class="text-xs text-muted/60 leading-relaxed">{technique}</p>}
     {dimensions && <p class="text-xs text-muted/40">{dimensions}</p>}
-    <p class="pt-2 text-right font-display text-[10px] font-bold tracking-[0.2em] text-accent">{signature}</p>
   </div>
 </div>

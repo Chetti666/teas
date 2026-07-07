@@ -32,15 +32,12 @@ const productListLd = {
   <script type="application/ld+json" set:html={JSON.stringify(productListLd)}>
   <section class="max-w-6xl mx-auto px-6 py-24 animate-reveal">
     <div class="max-w-xl">
-      <h1 class="font-display text-3xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Shop</h1>
-      <p class="text-sm text-muted/70">Ediciones limitadas y obras disponibles</p>
+      <h1 class="font-display text-xl font-bold tracking-[0.1em] uppercase text-ink mb-2">Shop</h1>
     </div>
-    <div class="h-px w-16 bg-stone my-8" />
-
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {productos.map((producto, i) => (
         <article
-          class="bg-white border border-stone/40 transition-all duration-500 hover:-translate-y-1"
+          class="bg-white transition-all duration-500 hover:-translate-y-1"
           style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
         >
           <div class="overflow-hidden bg-surface">
@@ -51,7 +48,7 @@ const productListLd = {
               loading="lazy"
             />
           </div>
-          <div class="p-5 space-y-2">
+          <div class="p-5 space-y-0.5">
             <h3 class="font-display text-base font-semibold uppercase tracking-[0.12em] text-ink">{producto.title}</h3>
             <p class="text-[11px] text-muted/60 uppercase tracking-wider">{producto.edition}</p>
             <p class="text-xs text-muted/50">{producto.technique}</p>
