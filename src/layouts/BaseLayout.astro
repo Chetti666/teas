@@ -23,6 +23,27 @@ const {
 
 const currentUrl = canonical ? `${siteUrl}${canonical}` : Astro.url.href
 const imageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
+
+const breadcrumbMap: Record<string, string> = {
+  '/': 'TEAS',
+  '/trabajo': 'Pinturas',
+  '/exhibiciones': 'Exhibiciones',
+  '/mural': 'Murales',
+  '/shop': 'Store',
+  '/bio': 'Bio',
+  '/contacto': 'Contacto',
+}
+
+const path = canonical ?? Astro.url.pathname
+const breadcrumbName = breadcrumbMap[path]
+const breadcrumbLd = breadcrumbName && path !== '/' ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'TEAS', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: breadcrumbName, item: `${siteUrl}${path}` },
+  ],
+} : null
 ---
 
 
@@ -84,6 +105,8 @@ const imageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`
         "inLanguage": "es-CL"
       }
     </script>
+
+    {breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)}></script>}
   </head>
   <body class="min-h-screen flex flex-col bg-surface text-ink antialiased">
     <Header currentPath={Astro.url.pathname} />
