@@ -24,7 +24,6 @@ const randomObras = [...obras].sort(() => Math.random() - 0.5).slice(0, 3)
       <h2 class="font-display text-2xl font-bold tracking-[0.15em] uppercase text-ink mb-2">Obras recientes</h2>
       <p class="text-sm text-muted/70">Selección de retratos y estudios, 2026</p>
     </div>
-    <div class="h-px w-16 bg-stone my-8" />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {randomObras.map((obra, i) => (
         <div style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}>

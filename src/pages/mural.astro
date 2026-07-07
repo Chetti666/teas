@@ -20,7 +20,6 @@ const murales = [
     principal: "/images/murales/muro2_principal.jpg",
     proceso: [
       "/images/murales/muro2_a.jpg",
-      "/images/murales/muro2a.jpg",
       "/images/murales/muro2b.jpg",
       "/images/murales/muro2c.jpg",
     ],
@@ -67,21 +66,25 @@ const murales = [
             style={`animation: reveal 0.7s ease-out ${i * 120}ms forwards; opacity: 0;`}
             data-mural={mural.id}
           >
-            <div class="flex justify-center bg-surface">
-              <img
-                src={mural.principal}
-                alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
-                class="w-full max-w-4xl lg:max-w-6xl h-auto max-h-[55vh] lg:max-h-[65vh] object-contain transition-transform duration-700 group-hover:scale-[1.02]"
-                loading={i === 0 ? "eager" : "lazy"}
-              />
+            <div class="max-w-4xl lg:max-w-6xl mx-auto">
+              <div class="bg-surface">
+                <img
+                  src={mural.principal}
+                  alt={`${mural.title} — mural contemporáneo de TEAS, intervención urbana en Santiago`}
+                  class="w-full h-auto transition-transform duration-700 group-hover:scale-[1.02]"
+                  loading={i === 0 ? "eager" : "lazy"}
+                />
+              </div>
+              <div class="mt-5 flex items-start justify-between gap-4">
+                <div>
+                  <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">
+                    {mural.title}
+                  </h3>
+                  <p class="text-sm text-muted/70 mt-1">{mural.location}</p>
+                </div>
+                <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] whitespace-nowrap group-hover:text-accent transition-colors duration-300 mt-1.5">Ver más →</span>
+              </div>
             </div>
-            <div class="mt-5 flex items-center justify-center gap-6">
-              <h3 class="font-display text-xl font-bold uppercase tracking-[0.12em] text-ink">
-                {mural.title}
-              </h3>
-              <span class="text-[11px] text-muted/50 uppercase tracking-[0.1em] group-hover:text-accent transition-colors duration-300">Ver más →</span>
-            </div>
-            <p class="text-sm text-muted/70 text-center mt-1">{mural.location}</p>
           </article>
         ))
       }
@@ -90,7 +93,7 @@ const murales = [
 
   <div id="mural-modal" class="fixed inset-0 z-50 hidden">
     <div
-      class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+      class="absolute inset-0 bg-white/95 backdrop-blur-sm"
       id="modal-backdrop"
     >
     </div>
@@ -99,15 +102,10 @@ const murales = [
     >
       <button
         id="modal-close"
-        class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl leading-none transition-colors"
+        class="absolute top-6 right-6 text-ink/70 hover:text-ink text-2xl leading-none transition-colors"
         >&times;</button
       >
       <div class="max-w-5xl w-full">
-        <h3
-          id="modal-title"
-          class="font-display text-lg font-bold uppercase tracking-[0.12em] text-white mb-6"
-        >
-        </h3>
         <div
           id="modal-gallery"
           class="grid grid-cols-1 md:grid-cols-2 gap-6 max-h-[70vh] overflow-y-auto"
@@ -135,7 +133,6 @@ const murales = [
       title: "Muro 2",
       images: [
         "/images/murales/muro2_a.jpg",
-        "/images/murales/muro2a.jpg",
         "/images/murales/muro2b.jpg",
         "/images/murales/muro2c.jpg",
       ],
@@ -155,13 +152,11 @@ const murales = [
       const id = el.dataset.mural;
       const data = muralesData[id];
       if (!data) return;
-      document.getElementById("modal-title").textContent =
-        data.title + " — Proceso";
       const gallery = document.getElementById("modal-gallery");
       gallery.innerHTML = data.images
         .map(
           (src) =>
-            `<div class="overflow-hidden bg-white/5 rounded-sm">
+            `<div class="overflow-hidden rounded-sm shadow-subtle">
           <img src="${src}" alt="Proceso creativo del mural ${data.title} de TEAS" class="w-full h-auto object-cover" loading="lazy" />
         </div>`,
         )
