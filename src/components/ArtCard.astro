@@ -1,22 +1,30 @@
 ---
 export interface Props {
-  title: string
-  image: string
-  alt: string
-  year?: number
-  technique?: string
-  dimensions?: string
-  index?: number
+  title: string;
+  image: string;
+  alt: string;
+  year?: number;
+  technique?: string;
+  dimensions?: string;
+  index?: number;
 }
 
-const { title, image, alt, year, technique, dimensions, index = 0 } = Astro.props
+const {
+  title,
+  image,
+  alt,
+  year,
+  technique,
+  dimensions,
+  index = 0,
+} = Astro.props;
 ---
 
 <div
   class="relative bg-white transition-all duration-500 hover:-translate-y-1"
   style={`animation-delay: ${index * 120}ms`}
 >
-    <div class="overflow-hidden bg-surface">
+  <div class="overflow-hidden bg-surface">
     <img
       src={image}
       alt={alt}
@@ -26,9 +34,17 @@ const { title, image, alt, year, technique, dimensions, index = 0 } = Astro.prop
     />
   </div>
   <div class="py-2.5 space-y-0.5">
-    <h3 class="font-display text-sm font-semibold uppercase tracking-[0.12em] text-ink">{title}</h3>
+    <h5
+      class="font-display text-sm font-semibold uppercase tracking-[0.12em] text-muted"
+    >
+      {title}
+    </h5>
     {year && <p class="text-xs font-medium text-muted">{year}</p>}
-    {technique && <p class="text-xs text-muted/60 leading-relaxed">{technique}</p>}
+    {
+      technique && (
+        <p class="text-xs text-muted/60 leading-relaxed">{technique}</p>
+      )
+    }
     {dimensions && <p class="text-xs text-muted/40">{dimensions}</p>}
   </div>
 </div>
