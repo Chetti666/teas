@@ -11,8 +11,8 @@ export default {
         accent: '#8B7E74',
       },
       fontFamily: {
-        display: ['Raleway', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
-        body: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        display: ['Noto Sans', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        body: ['Noto Sans', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
       },
       boxShadow: {
         brush: '4px 4px 0px 0px #1A1A1A',
